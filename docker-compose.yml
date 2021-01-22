@@ -8,6 +8,8 @@ services:
     hostname: network
     stdin_open: true
     tty: true
+    volumes:
+      - ./testdata/logs:/logs
     cap_add:
       - NET_ADMIN
     expose:
@@ -29,6 +31,7 @@ services:
     tty: true
     volumes:
       - ./testdata:/testdata:ro
+      - ./testdata/logs:/logs
     cap_add:
       - NET_ADMIN
     ulimits:
@@ -54,6 +57,7 @@ services:
     tty: true
     volumes:
       - ./testdata:/testdata:ro
+      - ./testdata/logs:/logs
     cap_add:
       - NET_ADMIN
     ulimits:
